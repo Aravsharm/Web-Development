@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        
+
+        .headercontent{
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+        }
+ 
+        .logo{
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .navbar{
+            display: flex ;
+            gap: .4rem;
+        }
+
+        @media screen and (min-width:891px){
+            .navbar{
+                display: flex;
+            }
+        }
+
+        .navlink{
+            align-items: center;
+            color: black;
+            padding: 0.15rem;
+            font-size: 1rem;
+        }
+
+        .navlink:hover{
+            color: rgb(41, 41, 187);
+        }
+        
+        .contact{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 6rem;
+            height: 1.6rem;
+            border-radius: 5px;
+            background-color: rgb(57, 57, 184);
+            color: white;
+        }
+
+        @media screen and (min-width:651px){
+            .contact{
+                display: flex;
+            }
+        }
+
+        .button{
+            display: none;
+            border: none;
+            border-radius: 5px;
+        }        
+
+        @media screen and (max-width:650px){
+            .button{
+                display: block;
+            }
+        }
+
+
+        .contact:hover{
+            background-color: rgb(24, 24, 170);
+            box-shadow: 0 0 5px rgb(16, 16, 168);
+        }
+
+        .mainsection{
+            max-width: 820px;
+            display: flex;
+            
+            justify-content: space-between;
+            margin: 0 auto;
+            padding-top: 3rem;
+        }
+
+
+        @media screen and (max-width:890px){
+            .mainsection{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                padding-left: 3px;
+                padding-right: 3px;
+                margin: 0 auto;
+            }
+
+            .content{
+                padding: 0;
+            }
+
+            .sectionlabel{
+                
+                text-align: center;
+            }
+            .sectiontitle{
+                min-width: 600px;
+                text-align: center;
+            }
+            .sectionpara{
+                min-width: 600px;
+                text-align: center;
+            }
+            @media screen and (max-width:650px) {
+                .sectionpara{
+                    min-width: 300px;
+                    margin: 0 auto;
+                }
+                .sectiontitle{
+                    min-width: 300px;
+                    margin: 0 auto;
+                }
+            }
+            .buttongroup{
+                min-width: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 30px;
+            }
+        }
+
+        .contentleft{
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: left;
+            animation: slidefromleft 1s ease forwards;
+            opacity: 0;
+            transition: all;
+            transition-delay: 2s;
+        }
+
+        @keyframes slidefromleft{
+            0%{
+                opacity: 0;
+                
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .sectionlabel{
+            font-size: 1.2rem;
+            color: rgb(52, 52, 151);
+            padding-top: 2rem;
+            padding-bottom: 1.7rem;
+        }
+
+        .sectiontitle{
+            max-width: 320px;
+            font-size: 2.2rem;
+            font-weight: bolder;
+            padding-bottom: 1.7rem;
+        }
+
+        .sectionpara{
+            max-width: 300px;
+            padding-bottom: 1.7rem;
+        }
+
+        .buttongroup{
+           display: flex;
+           gap: 12px;
+        }
+        
+        .startbutton{
+            background-color: rgb(42, 42, 134);
+            border-radius: 4.5px;
+            color: white;
+            padding: .5rem 1rem;
+            font-size: .8rem;
+            text-align: center;
+
+        }
+       
+        .tourbutton{
+            background-color: rgb(58, 55, 55);
+            border-radius: 4.5px;
+            color: white;
+            padding: .5rem 1rem;
+            font-size: .8rem;
+            text-align: center;
+
+        }
+
+        .sectionimage{
+            height: 350px;
+            width: 350px;
+            border-radius: 15px;
+        }
+
+        .headinglogo{
+            padding-top: 2.5rem;
+        }
+        
+        .componycontainer{
+            animation: slidefromleft1 1s ease forwards;
+            opacity: 0;
+            transition: all;
+            transition-delay: 2s;
+        }
+
+        @keyframes slidefromleft1{
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        .componygrid{
+            width: 460px;
+            height: 40px;
+            max-width: 470px;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.8rem;
+            grid-template-columns: repeat(4,2fr);
+            background-color: rgb(187, 187, 187);
+            padding-right: 8px;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width:550px) {
+            .componygrid{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(2,fr);
+                width: 280px;          
+                height: 90px;
+            }
+            
+        }
+
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            
+            background-color: rgb(228, 228, 228);
+            
+        }
+
+        .header1{
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #headercontent{
+            padding: .7rem;
+            max-width: 600px;
+        }
+
+        @media screen and (max-width:610px) {
+            #headercontent{
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            
+        }
+
+        .boxcontainer{
+            display: grid;
+            grid-template-columns: repeat(2 , 2fr);
+            grid-template-rows: repeat(3 , 2fr);
+            gap: 2rem;
+            margin: 0 auto;
+            padding-top: .7rem;
+            padding-bottom: 1.5rem;
+        }
+
+        @media screen and (max-width:740px) {
+            .boxcontainer{
+                display: grid;
+                grid-template-columns: repeat(1 , 2fr);
+                grid-template-rows: repeat(6 , 2fr);
+                height: 100%;
+            }
+            
+        }
+
+        .headertext{
+            font-weight: bold;
+            font-size: 2rem;
+            padding-top: 1rem;
+        }
+
+        .box1{
+            max-width: 250px;
+            background-color: rgb(37, 37, 163);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .box2{
+            max-width: 250px;
+            background-color:rgb(207, 78, 100);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .box3{
+            max-width: 250px;
+            background-color: rgb(218, 191, 39);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .box4{
+            max-width: 250px;
+            background-color: rgb(50, 204, 158);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .box5{
+            max-width: 250px;
+            background-color: rgb(76, 211, 76);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .box6{
+            max-width: 250px;
+            background-color: rgb(111, 62, 224);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .boxcontent{
+            padding-top: .8rem;
+            font-size: 1rem;
+        }
+
+        .boxpara{
+            max-width: 224px;
+            padding-top: .5rem;
+            font-size: .7rem;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        .spacebox{
+            height: 30px;
+            background-color: white;
+        }
+
+        .bottomcontainer{
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 1rem;
+            margin: 0 auto;
+        }
+
+        .bottomheader{
+            font-weight: bolder;
+        }
+
+        .bottombox{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(3 , 2fr);
+            gap: 1.3rem;
+        }
+
+        @media screen and (max-width:950px) {
+            .bottombox{
+                display: grid;
+                gap: 2rem;
+                margin: 0 auto;
+                grid-template-columns: repeat(1 , 2fr);
+                grid-template-rows: repeat(3 , 2fr);
+            }
+            
+        }
+
+        .insidebox{
+            width: 280px;
+            border: 1px solid rgb(209, 200, 200);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: .4rem;
+            transition: all;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+        }
+
+        .insidebox:hover{
+            box-shadow: 0 0 10px rgb(161, 158, 158);
+            transform: scale(1.04);
+            opacity: 1;
+        }
+
+        .bottomimg{
+            width: 60px;
+            border-radius: 30px;
+            padding-top: .6rem;
+            padding-bottom: .6rem;
+        }
+
+        .bottompara{
+            max-width: 260px;
+        }
+
+        .newscontainer{
+            padding: 2rem;
+        }
+
+        .newscontent{
+            max-width: 890px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width:1000px) {
+            .newscontent{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+            }
+        }
+
+        
+        .newsleft{
+            height: 100%;
+            width: 50%;
+        }
+
+        .newsleftimg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        
+
+        .newsright{
+            width: 445px;
+            height: 348px;
+            background-color: rgb(207, 203, 203);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: .7rem;
+            width: 50%;
+            padding: .8rem;
+        }
+        
+        @media screen and (max-width:990px) {
+            .newsright{
+                max-height: 348px;
+                
+            }
+
+            .newstitle{
+                font-size: 1rem;
+            }
+        }
+
+
+
+        .newstitle{
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgb(49, 49, 207);
+        }
+
+        .newsinfo{
+            padding: 0 3rem;
+        }
+
+        .newsdesc{
+            text-align: left;
+        }
+
+        @media screen and (max-width:930px) {
+            .newsdesc{
+                
+                max-width: 200px;
+                padding-left: 13px;
+                margin: 0 auto;
+            }
+
+            .newsform{
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+            }
+            .newsemail{
+                width: 200px;
+            }
+
+            .newssendbutton{
+                max-width: 80px;
+                text-align: center;
+            }
+        }
+
+        .newsform{
+            padding: 0 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            gap: .6rem;
+        }
+
+        .newsemail{
+            width: 70%;
+            outline: none;
+            border: 1px solid rgb(255, 254, 254);
+            border-radius: 4px;
+            padding: .5rem .6rem;
+        }
+        
+
+        .newsemail:hover{
+            border-color: rgb(90, 90, 238);
+            box-shadow: 0 4px 8px rgb(95, 95, 255);
+        }
+
+        .newssendbutton{
+            background-color: rgb(65, 65, 223);
+            color: rgb(241, 238, 238);
+            border: none;
+            border-radius: .35rem;
+            padding: .5rem 1rem;
+        }
+
+        .newssendbutton:hover{
+            background-color: rgb(107, 43, 226);
+            box-shadow: 0 0 5px rgb(56, 56, 226);
+        }
+
+        .privacypolicy{
+            font-size: .55rem;
+            padding: 0 3rem;
+            color: rgb(114, 103, 103);
+        }
+
+        .newslink{
+            text-decoration: underline;
+        }
+        
+        .footercontainer{
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer{
+            max-width: 890px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width:1000px) {
+            
+            .footer{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .footertop{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+            }
+
+        }
+
+        @media screen and (max-width:1000px) {
+            .footergrid{
+                padding-top: 2rem;
+                display: grid;
+                grid-template-columns: repeat(1 , 1fr);
+                grid-template-rows: repeat(4 , 1fr);
+            }
+        }
+
+        .footertop{
+            padding-left: -5rem;
+        }
+
+        .flogotext{
+            color: black;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .complogo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2rem;   
+        }
+
+        .footertext{
+            text-align: left;
+            padding-left: 5rem;
+            padding-top: .8rem;
+        }
+
+        .sociallogo{
+            width: 250px;
+            text-align: left;
+            padding-left: 5rem;
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .socialimg{
+            padding-right: 5px;
+        }
+        
+        .socialimg1{
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        @media screen and (min-width:999px) {
+            .footergrid{
+                padding-top: 2rem;
+                display: grid;
+                grid-template-columns: repeat(4 , 1fr);
+                grid-template-rows: repeat(1 , 1fr);
+            }
+        }
+
+        .footergridheading{
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .gridcolumn{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        ul{
+            list-style-type: none;
+            padding: 1rem;
+        }
+
+        .footerlink{
+            font-size: .8rem;
+            color: rgb(73, 72, 72);
+        }
+
+        .footercopyright{
+            padding-top: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="headercontent">
+            <div class="headerbar">
+                <a href="#logo" class="logo">
+                    <img src="second.jpg" height="40px"  alt="">
+                    <span class="logotext">StudySync</span>
+                </a>
+            </div>
+           
+            <div class="navbar">
+                <a href="#Home<" class="navlink">Home</a>
+                <a href="#Features" class="navlink">Features</a>
+                <a href="#Pricing" class="navlink">Pricing</a>
+                <a href="#Blog" class="navlink">Blog</a>
+                <a href="#About" class="navlink">About</a>
+            </div>
+
+            <a href="#contact us" class="contact">
+                Contact Us
+            </a>
+
+            <button class="button">
+                <img src="menu.png" height="25px" alt="#menu">
+            </button>
+
+        </div>
+
+        <section class="content">
+            <div class="mainsection">
+                <div class="contentleft">
+                    <p class="sectionlabel">Very Proud to introduce</p>
+                    <h1 class="sectiontitle">Seamless Learning For Brighter Futures</h1>
+                    <p class="sectionpara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum excepturi reiciendis as enim eos quisquam consectetur veritatis vitae quaerat quasi repellendus .</p>
+                    <div class="buttongroup">
+                        <a href="#start" class="startbutton">Start Now</a>
+                        <a href="#tour" class="tourbutton">Take Tour</a>
+                    </div>
+                </div>
+                <div class="contentright">
+                    <div class="imagecontainer">
+                        <img src="elect.jpg" alt="" height="300px" class="sectionimage">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="componycontainer">
+            <h2 class="headinglogo">Trusted by the best</h2>     
+            <div class="componygrid">
+                
+                <div class="componylogo">
+                    <img src="images/google.svg" class="svgimg" height="12px" alt="">
+                    <span class="logotext">Google</span>
+                </div>
+                
+                <div class="componylogo">
+                    <img src="images/microsoft.png" class="svgimg" height="12px"alt="">
+                    <span class="logotext">Microsoft</span>
+                </div>
+                
+                <div class="componylogo">
+                    <img src="images/linkedin-logo.png" class="svgimg"height="12px" alt="">
+                    <span class="logotext">Linkedin</span>
+                </div>
+                
+                <div class="componylogo">
+                    <img src="./images/icons8-vector-64.png" class="svgimg" height="12px"alt="">
+                    <span class="logotext">VectorEdu</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="spacebox">
+
+        </div>
+
+        <div class="container">
+        
+            <div class="header1">
+                <h2 class="headertext">Our competitive advantage</h2>
+                <span id="headercontent">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit quis eum sint deserunt nemo ab Lorem, ipsum dolor sit amet consectetur.</span>
+            </div>
+    
+            <div class="boxcontainer">
+                
+                <div class="box1">
+                    <img src="images/icons8-vector-64.png" height="30px" class="boximage" alt="">
+                    <span class="boxcontent">Personalized Learning</span>
+                    <p class="boxpara">Lorem ipsum dolor sit amet consectetur adippis icing elit. Minima, iste Lorem ipsum dolor_rupees sitamet.</p>
+                </div>
+    
+                <div class="box2">
+                    <img src="images/linkedin-logo.png" height="30px" class="boximage" alt="">
+                    <span class="boxcontent">Affordability</span>
+                    <p class="boxpara">Lorem ipsum dolor sit amet consectetur adippis icing elit. Minima, iste Lorem ipsum dolor_rupees sitamet.</p>
+                </div>
+    
+                <div class="box3">
+                    <img src="images/menu.png"  height="30px" class="boximage"alt="">
+                    <span class="boxcontent">Industry Partenership</span>
+                    <p class="boxpara">Lorem ipsum dolor sit amet consectetur adippis icing elit. Minima, iste Lorem ipsum dolor_rupees sitamet.</p>
+                </div>
+    
+                <div class="box4">
+                    <img src="images/microsoft.png"  height="30px" class="boximage"alt="">
+                    <span class="boxcontent">Innovative Technology</span>
+                    <p class="boxpara">Lorem ipsum dolor sit amet consectetur adippis icing elit. Minima, iste Lorem ipsum dolor_rupees sitamet.</p>
+                </div>
+    
+                <div class="box5">
+                    <img src="images/OIP (3).jpeg" height="30px"  class="boximage"alt="">
+                    <span class="boxcontent">Responsive Support</span>
+                    <p class="boxpara">Lorem ipsum dolor sit amet consectetur adippis icing elit. Minima, iste Lorem ipsum dolor_rupees sitamet.</p>
+                </div>
+    
+                <div class="box6">
+                    <img src="images/OIP.jpeg"  height="30px" class="boximage" alt="">
+                    <span class="boxcontent">Analystic and Insights</span>
+                    <p class="boxpara">Lorem ipsum dolor sit amet consectetur adippis icing elit. Minima, iste Lorem ipsum dolor_rupees sitamet.</p>
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="bottomcontainer">
+        <div class="bottomheader">
+            <h2 class="bottomheading">What Other Say About Us</h2>
+        </div>
+        <div class="bottombox">
+            
+            <div class="insidebox">
+                <p class="bottompara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsam soluta possible possimus quasi!</p>
+                <img src="images/B612_20240118_213547_530.jpg" height="70px" class="bottomimg" alt="">
+                <a href="#sumit">Sumit Sharma</a>
+                <span>10th Grade teacher</span>
+            </div>
+
+            
+            <div class="insidebox">
+                <p class="bottompara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsam soluta possible possimus quasi!</p>
+                <img src="images/B612_20230927_165625_863.jpg" height="70px" class="bottomimg" alt="">
+                <a href="#arush">Arush Sharma</a>
+                <span>5th Grade teacher</span>
+            </div>
+
+            
+            <div class="insidebox">
+                <p class="bottompara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsam soluta possible possimus quasi!</p>
+                <img src="images/B612_20240122_165239_525.jpg"  height="70px" class="bottomimg" alt="">
+                <a href="#arav">Arav Vishwakarma</a>
+                <span>8th Grade teacher</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="newscontainer">
+        <div class="newscontent">
+            <div class="newsleft">
+                <img src="elect.jpg" alt="" class="newsleftimg">
+            </div>
+            <div class="newsright">
+                
+                <div class="newsinfo">
+                    <h1 class="newstitle">Get the latest updates</h1>
+                    <p class="newsdesc">Sign up for our news letter</p>
+                </div>
+
+                <div class="newsform">
+                    <input type="text" class="newsemail" placeholder="email">
+                    <button class="newssendbutton">Send</button>
+                </div>
+
+                <div class="privacypolicy">
+                    By signing up to our newsletter you agree to our
+                    <a class="newslink" href="">Term of Service</a>
+                    and
+                    <a href="" class="newslink">Privacy Policy</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footercontainer">
+        <div class="footer">
+
+            <div class="footertop">
+                
+                <div class="complogo">
+                    <a href="#logo" class="logolink">
+                        <img src="second.jpg" height="40px"  alt="">
+                    </a>
+                    <span class="flogotext">StudySync</span>
+                </div>
+
+                <p class="footertext">Seamless Learning for Brighter Futures</p>
+
+                <div class="socials">
+                    <a href="" class="sociallogo">
+                        <img src="images/R.png"  height="30px" class="socialimg" alt="">
+                        <img src="images/R.jpeg" height="30px" class="socialimg" alt="">
+                        <img src="images/linkedin-logo.png" height="30px" class="socialimg1" alt="">
+                        <img src="images/microsoft.png" height="30px" class="socialimg1" alt="">
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footergrid">
+               
+                 <!-- column 1 -->
+
+                <div class="footergridcolumn">
+                    
+                    <div class="footergridheading">
+                        Products
+                    </div>
+
+                    <ul class="gridcolumn">
+                        <li>
+                            <a href="#overview" class="footerlink">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#solutions" class="footerlink">Solution</a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="footerlink">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#customer" class="footerlink">Customer</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- column 2 -->
+
+                <div class="footergridcolumn">
+                        <div class="footergridheading">
+                            Compony
+                        </div>
+    
+                        <ul class="gridcolumn">
+                            <li>
+                                <a href="#about" class="footerlink">About</a>
+                            </li>
+                            <li>
+                                <a href="#investor relation" class="footerlink">Investor Relation</a>
+                            </li>
+                            <li>
+                                <a href="#jobs" class="footerlink">Jobs</a>
+                            </li>
+                            <li>
+                                <a href="#press" class="footerlink">Press</a>
+                            </li>
+                            <li>
+                                <a href="#blog" class="footerlink">Blog</a>
+                            </li>
+                        </ul>
+                </div>
+
+                <!-- column 3 -->
+
+                <div class="footergridcolumn">
+                        <div class="footergridheading">
+                            Support
+                        </div>
+    
+                        <ul class="gridcolumn">
+                            <li>
+                                <a href="#contact" class="footerlink">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#dectation" class="footerlink">Dectation</a>
+                            </li>
+                            <li>
+                                <a href="#chat" class="footerlink">Chat</a>
+                            </li>
+                            <li>
+                                <a href="#faq" class="footerlink">FAQ</a>
+                            </li>
+                        </ul>
+    
+                </div>
+
+                <!-- column 4 -->
+
+                <div class="footergridcolumn">
+                        
+                    <div class="footergridheading">
+                        Legal
+                    </div>
+
+                    <ul class="gridcolumn">
+                        <li>
+                            <a href="#terms of service" class="footerlink">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#privacypolicy" class="footerlink">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#setting" class="footerlink">Cookie Setting</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footercopyright">
+            <img src="images/vector-copyright-symbol-icon.jpg" height="18px" class="copyimg" alt="">
+            <p>2023 = Present StudySync. Alll rights reserved.</p>
+        </div>
+    </div>
+    
+</body>
+</html>
